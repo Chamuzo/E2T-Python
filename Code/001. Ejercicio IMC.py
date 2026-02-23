@@ -8,17 +8,17 @@
 def calcula_imc(kg,m): #Creamos función
     IMC = kg / m**2
     if IMC < 18.5:
-        return(IMC,"Bajo peso")
+        return[IMC,,"Bajo peso"]
     elif 18.5 <= IMC < 25:
-        return(IMC,"Normal")
+        return[IMC,,"Normal"]
     elif 25 <= IMC < 30:
-        return(IMC,"Sobrepeso")
+        return[IMC,"Sobrepeso"]
     elif 30 <= IMC:
-        return(IMC,"Obesidad")
+        return[IMC,,"Obesidad"]
     else:
         return("ERROR")
 
 peso = float(input("Introduzca peso(kg):"))
 altura = float(input("Introduzca altura(m):"))
-
-print (f" Peso: {peso} \n ALtura: {altura} \n IMC: {calcula_imc(peso,altura)}")
+IMC, VALORACION = {calcula_imc(peso,altura)}
+#print (f" Peso: {peso} \n ALtura: {altura} \n IMC: IMC \n Valoración: VALORACION")
