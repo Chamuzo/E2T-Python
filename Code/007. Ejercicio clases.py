@@ -1,4 +1,3 @@
-"""
 class Persona:
     def __init__(self,name,age,rank):
         self.nombre = name
@@ -19,4 +18,3 @@ antonio.cumpleaños()
 ruben.cumpleaños()
 ruben.cumpleaños()
 ruben.cumpleaños()
-"""
