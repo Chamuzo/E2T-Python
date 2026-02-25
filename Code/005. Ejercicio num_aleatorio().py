@@ -7,7 +7,7 @@ for i in range (1,max+1):
     rango.append(i)
 rand_num = random.choice(rango)
 intentos = 5
-while intentos >0:
+while intentos > 0:
     choice = int(input(f"Seleciona un número del 1 al {max}. \n Dispones de {intentos} intentos. \n Número: "))
     if 0 < choice <= 100:
         if choice < rand_num:
