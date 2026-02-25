@@ -1,5 +1,6 @@
 #Crear calculadora de edad
 dias_mes = (0,31,28,31,30,31,30,31,31,30,31,30,31)
+meses_extra = []
 import datetime
 ano = int(1992)
 mes = int(6)
@@ -19,20 +20,11 @@ dias_medio = año_bisiesto*366 + año_normal*365
 dias_pre = dias_mes[fecha_nac.month] - fecha_nac.day
 n_month = 0
 for i in range(fecha_nac.month+1,13):
-    n_month += 1
+    meses_extra
     dias_pre += dias_mes[i]
 dias_hoy = dias_mes[hoy.month]
 for i in range(fecha_nac.month+1,13):
-    n_month += 1
+    meses_extra.append(i)
     dias_hoy += dias_mes[i]
-print(n_month)
+print(meses_extra)
 print(dias_hoy)
-
-
-    
-
-            
-
-
-print(año_bisiesto)
-print(año_normal)
