@@ -2,7 +2,7 @@
 # Clase personaje (nombre, vida y funcion de ataque)
 # Jugador y enemigo son personaje y atacan por turnos
 # Gana quien deje la vida del otro a 0.
-import random
+import random,time
 class Personaje:
     def __init__(self,alias,hp,speed,power):
         self.nombre = alias
