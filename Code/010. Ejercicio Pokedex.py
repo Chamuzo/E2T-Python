@@ -3,7 +3,7 @@
 # Habrá un contador del numero de pokemon capturados.
 from pokelist import pokekanto
 from random import choice,randint
-
+from tabulate import tabulate
 class pokemon:
     pokemon_capturados = 0
     pokemon_identificados = 0
@@ -14,6 +14,10 @@ class pokemon:
         self.tipo = poketype
         self.nivel = lvl
         self.capturado = capturado
+        # Si existia en la pokedex, pero ahora lo capturamos, actualizamos campo Capturado.
+        for i in pokemon.pokedex:   
+            if name in i:
+                pokemon.pokedex[i,3] = True
         pokemon.pokedex.append([name,poketype,lvl,capturado])
         
     def capturar(nombre,tipo,nivel):
@@ -24,20 +28,22 @@ class pokemon:
         pokemon(nombre,tipo,nivel,False)
         pokemon.pokemon_identificados += 1
 
-    def ver_pokedex(self):
-        for i in pokemon.pokedex:
-            print(f"{i[0]} | {i[1]} | {i[2]} | {i[3]}")
+    def lanzar_pokeball(self):
+        return randint(0,100)
 
-    def encontrar(lvl):
-        aparicion = choice(pokekanto)
+    def encontrar(poke,lvl):
         prob_capt = 40
-        lanzamiento_pokebal = randint(0,100)
-        if lanzamiento_pokebal <= prob_capt:
+        if pokemon.lanzar_pokeball <= prob_capt:
             pokemon.capturar(aparicion[0],aparicion[1],lvl)
         else:
             pokemon.identificar(aparicion[0],aparicion[1],lvl)
 
-for i in range(10):
-    pokemon.encontrar(randint(1,100))
+    def ver_pokedex(self):
+        print(tabulate(pokemon.pokedex,headers=["Nombre","Tipo","Nivel","Capturado"], tablefmt="grid"),end="\r")
 
-pokemon.ver_pokedex(pokemon)
+for i in range(5):
+    aparicion = choice(pokekanto)
+    a = pokemon.pokedex
+    b = "Hola"
+    print(f"{a:<25}")
+    
