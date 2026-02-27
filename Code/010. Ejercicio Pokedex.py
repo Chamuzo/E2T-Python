@@ -27,23 +27,17 @@ class pokemon:
     def ver_pokedex(self):
         for i in pokemon.pokedex:
             print(f"{i[0]} | {i[1]} | {i[2]} | {i[3]}")
-            print("a")
 
-    @classmethod
-    def encontrar(cls):
-        print("A")
+    def encontrar(lvl):
         aparicion = choice(pokekanto)
-        print(choice(pokekanto))
         prob_capt = 40
         lanzamiento_pokebal = randint(0,100)
-        aparicion_lvl = randint(21,100)
         if lanzamiento_pokebal <= prob_capt:
-            pokemon.capturar(aparicion[0],aparicion[1],aparicion[2],aparicion_lvl)
+            pokemon.capturar(aparicion[0],aparicion[1],lvl)
         else:
-            pokemon.identificar(aparicion[0],aparicion[1],aparicion[2],aparicion_lvl)
+            pokemon.identificar(aparicion[0],aparicion[1],lvl)
 
 for i in range(10):
-    pokemon.encontrar
+    pokemon.encontrar(randint(1,100))
 
-pokemon.ver_pokedex
-print(pokemon.pokedex)
+pokemon.ver_pokedex(pokemon)
